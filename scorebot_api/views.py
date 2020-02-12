@@ -1083,9 +1083,10 @@ class ScorebotAPI:
 
     @staticmethod
     def api_scoreboard(request, game_id):
-        return HttpResponseBadRequest(
-            "The old Scoreboard is deprecated. Please use the new Scoreboard"
-        )
+        return render(request, 'scoreboard.html', {'game_id':game_id})
+        ##return HttpResponseBadRequest(
+            ##"The old Scoreboard is deprecated. Please use the new Scoreboard"
+        ##)
 
     @staticmethod
     def api_scoreboard_json(request, game_id):
